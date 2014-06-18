@@ -27,13 +27,12 @@ import javax.lang.model.element.ExecutableElement;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
 
-@SupportedSourceVersion(SourceVersion.RELEASE_7)
+@SupportedSourceVersion(SourceVersion.RELEASE_6)
 @SupportedAnnotationTypes("impatient.java.compiletime.annotation.Assignment")
 public class AssignmentProcess extends AbstractProcessor {
 
     private TypeElement assignmentElement;
 
-    //private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     public synchronized void init(ProcessingEnvironment processingEnv) {
@@ -61,7 +60,7 @@ public class AssignmentProcess extends AbstractProcessor {
         for (AnnotationMirror mirror : annotations) {
             if (mirror.getAnnotationType().asElement().equals(assignmentElement)) {
                 Map<? extends ExecutableElement, ? extends AnnotationValue> values = mirror.getElementValues();
-                System.out.println("Print Assignee : " + getAnnotationValue(values, "assignee")); //获取注解的值
+                System.out.println("Print Assignee : " + getAnnotationValue(values, "assignee")); 
 
             }
         }
