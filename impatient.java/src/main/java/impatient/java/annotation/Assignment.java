@@ -7,7 +7,7 @@
  * conditions stipulated in the agreement/contract under which the
  * program(s) have been supplied.
  *----------------------------------------------------------------------------*/
-package impatient.java.compiletime.annotation;
+package impatient.java.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

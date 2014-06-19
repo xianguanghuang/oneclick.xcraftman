@@ -7,7 +7,7 @@
  * conditions stipulated in the agreement/contract under which the
  * program(s) have been supplied.
  *----------------------------------------------------------------------------*/
-package impatient.java.compiletime.annotation;
+package impatient.java.annotation;
 
 @Assignment(assignee = "XianGuang", effort = 20)
 public class AssignmentUsage {
