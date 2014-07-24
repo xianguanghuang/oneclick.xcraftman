@@ -59,6 +59,44 @@ function letUsage {
     echo $_RESULT
 }
 
+function whileInfinitLoop {
+    #判断语句可以 放在［］ 里面，但是和判断语句要有一个 空格的位置
+    while [ 1 -eq 1 ]; do
+        #在 while里必须要有一个语句，否则会出错
+        test=1 
+    done
+}
+
+function hput() {
+  key=$(echo $2 | sed 's/-/_/g')
+  eval "$1""$key"='$3'
+}
+
+
+function hget() {
+  key=$(echo $2 | sed 's/-/_/g')
+  #将echo 放到最后表示echo的内容是 函数的返回值
+  eval echo '${'"$1""$key"'#hash}'
+}
+
+function initImpactTable(){
+  hput impact adapter-alias "Adapter_Alias"
+  hput impact adapter-bwlist "BWList"
+  hput impact device-capability "DeviceCapability"
+  hput impact foundation "CommonService"
+  hput impact integration-msdp "Messaging"
+  hput impact location "Location Privacy"
+  hput impact messaging "Messaging Adapter_Charging Adapter_Alias Adapter_BWList"
+  hput impact messaging-server "Messaging"
+  hput impact payment "Payment Adapter_Charging"
+  hput impact privacy "Privacy"
+}
+
+function pureReturn(){
+  #将echo 放到最后表示echo的内容是 函数的返回值
+  echo "def"
+}
+
 
 
 #最简单的函数调用，没有一个参数
@@ -73,3 +111,8 @@ echoAndAssign
 functionParamSeq 1 2 3
 loopForUsage "Foundation FoundationAdmin"
 letUsage 20 20
+initImpactTable
+abc=$(hget impact adapter-alias)
+echo $abc
+abc=$(pureReturn)
+echo $abc
