@@ -28,5 +28,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="not_mvn_lib/jcip-annotations-1.0-sources.jar"/>
+	<classpathentry kind="lib" path="not_mvn_lib/jcip-annotations-1.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
