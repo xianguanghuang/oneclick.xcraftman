@@ -114,5 +114,6 @@ letUsage 20 20
 initImpactTable
 abc=$(hget impact adapter-alias)
 echo $abc
+#当要使用函数的返回值的时候，需要 用 eval 或者 $()
 abc=$(pureReturn)
 echo $abc
