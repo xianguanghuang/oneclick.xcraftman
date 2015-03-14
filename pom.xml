@@ -5,6 +5,7 @@
         <module>impatient.netty</module>
         <module>impatient.springboot</module>
         <module>impatient.java.lang</module>
+        <module>impatient.shell</module>
     </modules>
     <groupId>org.xcraftman</groupId>
     <artifactId>impatient.programming</artifactId>
