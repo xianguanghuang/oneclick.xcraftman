@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>org.xcraftman</groupId>
-        <artifactId>java.impatient</artifactId>
+        <artifactId>impatient.programming</artifactId>
         <version>master-SNAPSHOT</version>
     </parent>
 
@@ -23,12 +23,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.2.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-            <version>1.2.0.RELEASE</version>
         </dependency>
     </dependencies>
 
