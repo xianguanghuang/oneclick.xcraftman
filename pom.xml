@@ -4,9 +4,33 @@
     <modules>
         <module>impatient.netty</module>
     </modules>
-
     <groupId>org.xcraftman</groupId>
-  <artifactId>java.impatient</artifactId>
-  <version>master-SNAPSHOT</version>
-  <name>java.impatient</name>
+    <artifactId>java.impatient</artifactId>
+    <version>master-SNAPSHOT</version>
+    <name>java.impatient</name>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>1.2.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>1.2.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>1.2.0.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
 </project>
