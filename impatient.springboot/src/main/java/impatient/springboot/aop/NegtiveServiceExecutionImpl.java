@@ -7,10 +7,14 @@
  * conditions stipulated in the agreement/contract under which the
  * program(s) have been supplied.
  *----------------------------------------------------------------------------*/
-package impatient.programming.spring.aop;
+package impatient.springboot.aop;
 
-public interface ServiceExecution {
+public class NegtiveServiceExecutionImpl implements ServiceExecution {
 
-    public int execute(String inParam);
+    @Override
+    public int execute(String inParam) {
+        // TODO Auto-generated method stub
+        return 0 - inParam.length();
+    }
 
 }

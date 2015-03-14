@@ -10,9 +10,9 @@
 
 	<aop:aspectj-autoproxy />
 
-    <bean id="positiveServiceExecutionImpl" class="impatient.programming.spring.aop.PositiveServiceExecutionImpl"/>
-    <bean id="negtiveServiceExecutionImpl" class="impatient.programming.spring.aop.NegtiveServiceExecutionImpl"/>
-    <bean id="serviceExecutionMonitor" class="impatient.programming.spring.aop.ServiceExecutionMonitor"/>
+    <bean id="positiveServiceExecutionImpl" class="PositiveServiceExecutionImpl"/>
+    <bean id="negtiveServiceExecutionImpl" class="NegtiveServiceExecutionImpl"/>
+    <bean id="serviceExecutionMonitor" class="ServiceExecutionMonitor"/>
 
 	
 </beans>
