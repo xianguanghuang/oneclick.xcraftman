@@ -6,6 +6,7 @@
         <module>impatient.springboot</module>
         <module>impatient.java.lang</module>
         <module>impatient.shell</module>
+        <module>impatient.guava</module>
     </modules>
     <groupId>org.xcraftman</groupId>
     <artifactId>impatient.programming</artifactId>
@@ -69,18 +70,25 @@
                 <version>1.0</version>
             </dependency>
 
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <scope>test</scope>
-                <version>4.11</version>
-            </dependency>
 
             <dependency>
                 <groupId>net.jcip</groupId>
                 <artifactId>jcip-annotations</artifactId>
                 <scope>compile</scope>
                 <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>18.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <scope>test</scope>
+                <version>4.11</version>
             </dependency>
 
             <dependency>
