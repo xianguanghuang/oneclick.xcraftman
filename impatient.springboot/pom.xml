@@ -12,6 +12,8 @@
 
     <artifactId>impatient.springboot</artifactId>
 
+
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,6 +49,11 @@
             <groupId>aopalliance</groupId>
             <artifactId>aopalliance</artifactId>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
         </dependency>
     </dependencies>
 

@@ -23,7 +23,7 @@ public class Application implements CommandLineRunner {
     @Autowired
     private JdbcClient jdbcClient;
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
