@@ -23,7 +23,7 @@ public class App implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-       for (int i = 0; i < 10; i++){
+       for (int i = 0; i < 100; i++){
            RedisThread redisThread = new RedisThread(stringRedisTemplate);
            new Thread(redisThread).start();
        }

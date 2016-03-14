@@ -18,11 +18,8 @@ public class RedisThread implements Runnable{
     public void run() {
         for (int i = 0 ; i < 10000; i ++){
             stringRedisTemplate.opsForValue().append("b","bb");
-            try {
-                Thread.sleep(5);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
+
         }
         System.out.println("thread run done");
     }
