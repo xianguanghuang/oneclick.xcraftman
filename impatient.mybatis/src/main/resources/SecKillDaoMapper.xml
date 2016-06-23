@@ -1,0 +1,12 @@
+<mapper>
+
+    <select id = "killByProcedure" statementType = "CALLABLE">
+        call execute_seckill(
+        #{seckillId, jphonedbcType=BIGINT, mode=IN},
+        #{phone, jdbcType=BIGINT, mode=IN},
+        #{killTime, jdbcType=TIMESTAMP, mode=IN},
+        #{result, jdbcType=BIGINT, mode=OUT},
+        )
+
+    </select>
+</mapper>
