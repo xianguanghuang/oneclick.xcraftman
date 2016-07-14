@@ -8,7 +8,14 @@
         <module>impatient.java.lang</module>
         <!--<module>impatient.shell</module>
         <module>impatient.guava</module> -->
-    <module>impatient.httpclient</module>
+     
+    <module>impatient.springboot.standalone</module>
+    <module>impatient.apache.strom</module>
+    <module>impatient.maning.bigdata</module>
+    <module>impatient.netty4</module>
+    <module>impatient.jackson</module>
+    <module>impatient.mybatis</module>
+    <module>impatient.apache.httpclient</module>
   </modules>
     <groupId>org.xcraftman</groupId>
     <artifactId>impatient.programming</artifactId>
@@ -46,6 +53,13 @@
                     <artifactId>spring-boot-starter-amqp</artifactId>
                     <version>1.3.3.RELEASE</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-redis</artifactId>
+                <version>1.2.0.RELEASE</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>mysql</groupId>
