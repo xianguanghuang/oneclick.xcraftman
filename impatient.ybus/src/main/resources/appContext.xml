@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+
+
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 引入配置文件 -->
+    <bean id="PropertyPlaceholderConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreResourceNotFound">
+            <value>false</value>
+        </property>
+        <property name="locations">
+            <list>
+                <value>classpath:properties.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 定义consumer的参数 -->
+    <bean id="consumerProperties" class="java.util.HashMap">
+        <constructor-arg>
+            <map>
+                <entry key="bootstrap.servers" value="${bootstrap.servers}"/>
+                <entry key="group.id" value="${group.id}"/>
+                <entry key="enable.auto.commit" value="true"/>
+                <entry key="auto.commit.interval.ms" value="1000"/>
+                <entry key="session.timeout.ms" value="15000"/>
+                <entry key="key.deserializer" value="org.apache.kafka.common.serialization.StringDeserializer"/>
+                <entry key="value.deserializer" value="org.apache.kafka.common.serialization.StringDeserializer"/>
+            </map>
+        </constructor-arg>
+    </bean>
+
+    <!-- 创建consumerFactory bean -->
+    <bean id="consumerFactory" class="org.springframework.kafka.core.DefaultKafkaConsumerFactory">
+        <constructor-arg ref="consumerProperties" />
+    </bean>
+
+    <!-- 实际执行消息消费的类 -->
+    <bean id="messageListernerConsumerService" class="org.xcraftman.ybus.PushTokenConsumer"/>
+
+    <!-- 消费者容器配置信息 -->
+    <bean id="containerProperties" class="org.springframework.kafka.listener.config.ContainerProperties">
+        <constructor-arg value="${pushToken.sub.topic}"/>
+        <property name="messageListener" ref="messageListernerConsumerService"/>
+    </bean>
+
+    <bean id="messageListenerContainer" class="org.springframework.kafka.listener.ConcurrentMessageListenerContainer" init-method="doStart">
+        <constructor-arg ref="consumerFactory"/>
+        <constructor-arg ref="containerProperties"/>
+    </bean>
+
+</beans>
