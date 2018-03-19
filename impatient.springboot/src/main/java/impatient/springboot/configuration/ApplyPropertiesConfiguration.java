@@ -1,5 +1,6 @@
 package impatient.springboot.configuration;
 
+import impatient.springboot.hello.FooBarHandlerMethodArgumentResolver;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,6 +29,11 @@ public class ApplyPropertiesConfiguration {
     @Bean
     public  String useHostName(){
         return redisHostName;
+    }
+
+    @Bean
+    public FooBarHandlerMethodArgumentResolver resolver(){
+        return new FooBarHandlerMethodArgumentResolver();
     }
 
 

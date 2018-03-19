@@ -9,9 +9,10 @@
  *----------------------------------------------------------------------------*/
 package impatient.java.lang.multithreads.testing;
 
-import java.util.concurrent.*;
+import net.jcip.annotations.GuardedBy;
+import net.jcip.annotations.ThreadSafe;
 
-import net.jcip.annotations.*;
+import java.util.concurrent.Semaphore;
 
 /**
  * BoundedBuffer

@@ -6,8 +6,8 @@ import org.springframework.boot.actuate.metrics.CounterService;
 import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by xianguanghuang on 15-4-12.
@@ -22,8 +22,8 @@ public class CustomizedMetricController {
     @Autowired
     private GaugeService gaugeService;
 
-    @RequestMapping("/")
-    @ResponseBody
+   // @RequestMapping("/")
+    //@ResponseBody
     String anyRequest() {
 
         // counterService 是基本的技术功能

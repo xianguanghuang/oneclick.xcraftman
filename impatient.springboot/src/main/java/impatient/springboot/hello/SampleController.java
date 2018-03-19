@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -18,6 +19,12 @@ public class SampleController<E> {
     String home() {
 
         return "Hello World!";
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public void processFooBar(FooBar fooBar) {
+        //Do stuff
+        System.out.println(fooBar.getBar());
     }
 
     public static void main(String[] args) throws Exception {
